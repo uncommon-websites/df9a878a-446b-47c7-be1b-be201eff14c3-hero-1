@@ -28,7 +28,7 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #064e3b 0%, #022c22 50%, #064e3b 100%);
+            background: linear-gradient(135deg, #022c22 0%, #011a13 50%, #022c22 100%);
             background-size: 200% 200%;
             animation: gradient-shift 15s ease infinite;
         }
@@ -60,29 +60,37 @@
 </head>
 <body class="gradient-bg text-white">
 
-    <!-- Navigation Pill -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6">
-        <div class="nav-glass border border-white/20 rounded-full px-5 py-3 flex items-center justify-between w-[320px]">
-            <!-- Logo Icon -->
-            <div class="flex-shrink-0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
-                    <path d="M9 5C9 3.34315 7.65685 2 6 2C4.34315 2 3 3.34315 3 5C3 6.65685 4.34315 8 6 8C7.65685 8 9 6.65685 9 5Z" fill="currentColor"/>
-                    <path d="M21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8C19.6569 8 21 6.65685 21 5Z" fill="currentColor"/>
-                    <path d="M9 19C9 17.3431 7.65685 16 6 16C4.34315 16 3 17.3431 3 19C3 20.6569 4.34315 22 6 22C7.65685 22 9 20.6569 9 19Z" fill="currentColor"/>
-                    <path d="M21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22C19.6569 22 21 20.6569 21 19Z" fill="currentColor"/>
-                </svg>
+    <!-- Normal Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                        <path d="M9 5C9 3.34315 7.65685 2 6 2C4.34315 2 3 3.34315 3 5C3 6.65685 4.34315 8 6 8C7.65685 8 9 6.65685 9 5Z" fill="currentColor"/>
+                        <path d="M21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8C19.6569 8 21 6.65685 21 5Z" fill="currentColor"/>
+                        <path d="M9 19C9 17.3431 7.65685 16 6 16C4.34315 16 3 17.3431 3 19C3 20.6569 4.34315 22 6 22C7.65685 22 9 20.6569 9 19Z" fill="currentColor"/>
+                        <path d="M21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22C19.6569 22 21 20.6569 21 19Z" fill="currentColor"/>
+                    </svg>
+                    <span class="font-bold tracking-widest text-lg text-white uppercase">DiligenceSquared</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Solutions</a>
+                    <a href="#" class="text-white/80 hover:text-white transition-colors text-sm font-medium">How it Works</a>
+                    <a href="#" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Pricing</a>
+                    <a href="#" class="bg-white/10 hover:bg-white/20 border border-white/20 px-5 py-2 rounded-full text-sm font-semibold transition-all">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Icon -->
+                <button class="md:hidden focus:outline-none">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                        <line x1="4" y1="8" x2="20" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="4" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-
-            <!-- Brand Name -->
-            <span class="font-bold tracking-widest text-sm text-white uppercase">DiligenceSquared</span>
-
-            <!-- Menu Icon -->
-            <button class="flex-shrink-0 focus:outline-none">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
-                    <line x1="4" y1="8" x2="20" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="4" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-            </button>
         </div>
     </nav>
 
