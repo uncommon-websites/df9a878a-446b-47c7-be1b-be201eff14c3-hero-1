@@ -11,13 +11,58 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #ecfdf5 100%);
+            background-size: 200% 200%;
+            animation: gradient-shift 15s ease infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #065f46 0%, #047857 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-glow {
+            box-shadow: 0 20px 60px -15px rgba(6, 95, 70, 0.3), 
+                        0 0 80px -20px rgba(16, 185, 129, 0.2),
+                        0 10px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-glow {
+            box-shadow: 0 10px 40px -10px rgba(6, 95, 70, 0.6),
+                        0 0 60px -15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .nav-glass {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="gradient-bg text-gray-900">
 
     <!-- Navigation Pill -->
     <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6">
-        <div class="bg-white border border-gray-200 shadow-sm rounded-full px-5 py-3 flex items-center justify-between w-[320px]">
+        <div class="nav-glass border border-gray-200/50 rounded-full px-5 py-3 flex items-center justify-between w-[320px]">
             <!-- Logo Icon -->
             <div class="flex-shrink-0">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#065f46]">
@@ -47,11 +92,11 @@
         <!-- Hero Text -->
         <div class="text-center max-w-4xl mx-auto mb-12">
             <div class="flex flex-col items-center justify-center space-y-1 mb-6">
-                <p class="text-[#475569] text-sm font-medium">Investor-grade market intelligence in days</p>
-                <p class="text-gray-400 text-xs">AI-moderated interviews at 5% of traditional cost</p>
+                <p class="text-[#065f46] text-sm font-semibold tracking-wide">Investor-grade market intelligence in days</p>
+                <p class="text-emerald-600/70 text-xs font-medium">AI-moderated interviews at 5% of traditional cost</p>
             </div>
             
-            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] leading-none font-medium text-gray-900 tracking-tight">
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] leading-none font-semibold text-gradient tracking-tight">
                 Validate your PE deals in 48 hours
             </h1>
         </div>
@@ -59,7 +104,7 @@
         <!-- Hero Image Container -->
         <div class="relative w-full max-w-[1400px] mx-auto">
             <!-- Image -->
-            <div class="rounded-3xl overflow-hidden shadow-sm aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/8] bg-gray-100">
+            <div class="rounded-3xl overflow-hidden hero-glow aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/8] bg-gradient-to-br from-gray-50 to-gray-100 ring-1 ring-gray-200/50">
                 <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/df9a878a-446b-47c7-be1b-be201eff14c3/hero-1-img-0-1770757668174.png" 
                      alt="Memo Robot Close-up" 
                      class="w-full h-full object-cover">
@@ -67,11 +112,11 @@
 
             <!-- Floating CTA Button -->
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-max px-4">
-                <button class="group bg-[#065f46] hover:bg-[#064e3b] transition-all duration-300 text-white rounded-full px-6 py-3.5 flex items-center justify-center gap-6 shadow-lg mx-auto">
-                    <span class="font-medium text-sm tracking-tight">Start your 48-hour pilot</span>
-                    <span class="font-light text-sm text-emerald-100 flex items-center gap-2">
+                <button class="group bg-gradient-to-r from-[#065f46] to-[#047857] hover:from-[#064e3b] hover:to-[#065f46] transition-all duration-500 text-white rounded-full px-8 py-4 flex items-center justify-center gap-6 cta-glow hover:scale-105 hover:shadow-2xl mx-auto transform">
+                    <span class="font-semibold text-base tracking-tight">Start your 48-hour pilot</span>
+                    <span class="font-normal text-sm text-emerald-50/90 flex items-center gap-2">
                         Request a demo
-                        <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                        <span class="w-1.5 h-1.5 bg-emerald-200 rounded-full group-hover:bg-white transition-colors duration-300"></span>
                     </span>
                 </button>
             </div>
